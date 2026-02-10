@@ -11,7 +11,7 @@ This is a record of my learning process of the fabrication and modeling course p
 
 ## About me
 
-![](./images/KIRENGA OLIVIER_224020861.jpg){ width=200 align=right }
+![](./images/KIRENGAOLIVIER_224020861.jpg){ width=200 align=right }
 
 Hi! I am KIRENGA OLIVIER.
 I am a Master`s student in IoT Embedded Computing Systems at the University of Rwanda African Center of Excellence. My primary interests lie in smart infrastructure, with a growing focus on integrating data-driven intelligence and secure system architectures into real-world applications.

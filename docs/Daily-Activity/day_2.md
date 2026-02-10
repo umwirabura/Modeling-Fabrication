@@ -79,12 +79,7 @@ This perspective challenges the traditional workflow of manually redrawing featu
 - Screenshots:  
   Located in `docs/images/day_2/`
 
----
 
-## Links
-
-- Back to [Home](index.md)
-- Back to [Day 1](day_1.md)
 
 ## Activity 2 – Inkscape Model
 
@@ -98,10 +93,10 @@ Next, rectangular slots were created by drawing shapes at the appropriate positi
 
 One of the main challenges encountered was achieving the correct tolerance for the press-fit joints. Slots that are too tight won't allow assembly, while slots that are too loose result in unstable connections. Understanding how material thickness affects the design and accounting for the laser cutter's kerf (the width of material removed by the laser beam) were important considerations. The final design demonstrates how 2D vector graphics can be directly translated into functional fabricated objects.
 
-![Final panel design](images/day_2/final.png)
+![Final panel design](../images/day_2/final.png)
 
 This activity reinforced the importance of precision in 2D design for fabrication and highlighted the relationship between digital modeling and physical manufacturing constraints. The workflow demonstrated how vector-based design serves as a bridge between concept and production-ready files.
 
 ### Download Files
 
-[Download Panel (.svg)](files/Activity2.svg)
+[Download Panel (.svg)](../files/Activity2.svg)

@@ -18,10 +18,10 @@ Design rule checking (DRC) was performed to verify the layout met manufacturing 
 
 The final preparation involved adding identifying text to the board and exporting Gerber files and drill files. These files serve as the manufacturing instructions for the milling machine, defining where copper should be removed and where holes should be drilled. The design was reviewed in the 3D viewer to verify component placement and overall board aesthetics before export.
 
-![Final routed PCB design (3D view)](images/day_3/3d view.png)
+![Final routed PCB design (3D view)](../images/day_3/3dview.png)
 
 One of the primary learning outcomes from this activity was understanding that component placement is critical in single-sided PCB design. Good planning at the layout stage significantly reduces routing complexity. The challenge of working within single-sided constraints emphasized the importance of thinking ahead about fabrication requirements rather than simply connecting nets. This activity provided hands-on experience with the complete PCB design workflow, from schematic capture through layout and file generation.
 
 ### Download Files
 
-[Download KiCad Project Files (.zip)](files/Microcontroller_PCB_Design.zip)
+[Download KiCad Project Files (.zip)](../files/Microcontroller_PCB_Design.zip)

@@ -20,7 +20,7 @@ After trace milling was complete, the tool was changed to accommodate the board 
 
 The final milled board was removed from the machine bed and inspected for quality. The traces were clean and well-defined, with proper clearance between conductive paths. Holes for component leads were accurately positioned, and the board outline was cut cleanly. Minor burrs or rough edges from the milling process could be cleaned up with fine sandpaper or a deburring tool. The board was then ready for the next stage of assembly, which would involve soldering the ATtiny45 microcontroller, LED, resistor, push button, ISP header, and other components.
 
-![Final milled PCB board](images/day7/final PCB.jpg)
+![Final milled PCB board](../images/day_7/finalPCB.jpeg)
 
 This activity demonstrated the complete transition from digital PCB design to physical fabrication. Understanding how design decisions in KiCad directly affect the milling process reinforced the importance of design-for-manufacturing principles. Working with the CNC milling machine provided hands-on experience with CAM workflows, toolpath generation, and the practical considerations of subtractive manufacturing. The challenges encountered, particularly around tool calibration and board fixation, highlighted the importance of careful setup and attention to detail in achieving reliable fabrication results. The successful production of a functional PCB from the Day 3 design validated the entire design-to-fabrication workflow and prepared the board for final assembly and testing.
 

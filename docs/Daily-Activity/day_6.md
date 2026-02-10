@@ -10,7 +10,7 @@ The workflow began with downloading the STL file and importing it into slicing s
 
 One significant challenge encountered during this process was selecting the correct printer profile in the slicing software. Initially, the wrong printer type was configured, which caused an error when attempting to send the print job to the machine. This error highlighted the importance of verifying machine settings before starting a print, as different printers have varying build volumes, nozzle configurations, and firmware requirements. The error was resolved by reconfiguring the slicer with the correct printer model and re-generating the G-code.
 
-![Printer configuration error](images/day_6/error.jpg)
+![Printer configuration error](../images/day_6/error.jpeg)
 
 After resolving the configuration issue, the corrected G-code was loaded onto the printer. The machine was prepared by ensuring the build plate was level and clean, and that the filament was properly loaded and feeding smoothly. The print began with a first layer that required careful monitoring to ensure proper adhesion to the build plate, as first layer issues are a common cause of print failures. Once the first few layers were successfully deposited, the print continued with minimal intervention.
 
@@ -18,7 +18,7 @@ The printing process itself took several hours, depending on the size and comple
 
 After the print completed, the part was removed from the build plate. Post-processing involved removing any support material and cleaning up the surface. Depending on the print quality and intended use, additional finishing steps such as sanding, filing, or chemical smoothing could be applied, though these were not strictly necessary for a functional prototype. The dimensional accuracy was checked to ensure the lid would fit properly with its corresponding container base.
 
-![Final 3D printed container lid](images/day_6/final print.png)
+![Final 3D printed container lid](../images/day_6/finalprint.png)
 
 This activity demonstrated several key concepts in additive manufacturing. Understanding how slicer settings affect both print quality and print time is essential for efficient 3D printing. The importance of proper machine configuration and error troubleshooting was reinforced through the printer selection issue. Additionally, working with a functional design that has specific dimensional requirements highlighted how 3D printing tolerances and material shrinkage must be considered during the digital preparation phase.
 
