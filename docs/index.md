@@ -4,39 +4,23 @@ glightbox: false
 
 # My documentation
 
-This is an example of participant's documentation for the Fabricademy program.
+Welcome to my digital fabrication and modeling documentation website.
 
-You can edit it on [Github](http://github.com/R-INYURU). The software used turns simple text files written in [Markdown](https://en.wikipedia.org/wiki/Markdown) format, into the site you are navigating.
-
-Each time you change a page using the Gitlab interface, the site is rebuilt and all the changes published
-in few minutes.
-
-If this is your site, go on and edit this page clicking the Gitlab link on the upper right, changing the text below and deleting this.
-
-No worries, you can't break anything, all the changes you make are saved under [Version Control](https://en.wikipedia.org/wiki/Version_control) using [GIT](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control). This means that you have all the different versions of your page saved and available all the time in the Gitlab interface.
-
-This is an example of how you can structure your documentation, including ways of adding images, videos, tables e.t.c. Once you start editing make sure that you delete the examples and you make this page yours.
-
+This is a record of my learning process of the fabrication and modeling course provided by FABLAB and ACEIoT.
 
 
 ## About me
 
-![](./images/avatar-photo.jpg){ width=200 align=right }
+![](./images/KIRENGA OLIVIER_224020861.jpg){ width=200 align=right }
 
-_you can introduce yourself in many ways! audio, images, video.._
-
-Hi! I am Emma Brewer. I am an art director & graphic designer based in New York City working on branding, visual identities, editorial design and web design.
-
-_the image above has a prefixed width and is aligned on the right side_
-
-
-_below an example from the documentation of both [Sara Alvarez](https://class.textile-academy.org/2021/sara.alvarez/) TextileLab Amsterdam 2020-21 and [Diane Wakim](https://class.textile-academy.org/2021/diane.wakim/) Le TextileLab Lyon_
+Hi! I am KIRENGA OLIVIER.
+I am a Master`s student in IoT Embedded Computing Systems at the University of Rwanda African Center of Excellence. My primary interests lie in smart infrastructure, with a growing focus on integrating data-driven intelligence and secure system architectures into real-world applications.
 
 
 
 ## My background
 
-I was born in a nice city called..
+I am originally from Rwanda and hold a Bachelor’s degree in Internet of Things, which I completed in China. My academic and professional experience spans embedded hardware–software integration, Android-based systems, and smart transportation technologies. I have worked on practical IoT solutions in industry settings, particularly in smart mobility and device-level system optimization, and I aim to deepen my expertise in building scalable, secure, and intelligent embedded systems during my master’s studies.
 
 <!-- This below clears both sides under "aligned" images - see two images above.
 Can also be used just as "clear: right;" rather than "clear: both;", if you are using an image on the right, for example.

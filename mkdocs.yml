@@ -1,11 +1,11 @@
 # Replace the text below to customize your site
-site_name: Loes Bogers
-site_description: Your name Fabricademy site
-site_author: Your name
-copyright: Copyright 2025 Your name - Creactive Commons Attribution Non-commercial
+site_name: Modeling & Fabrication
+site_description: Documentation
+site_author: KIRENGA OLIVIER
+copyright: Copyright 2025 KIRENGA OLIVIER - Creactive Commons Attribution Non-commercial
 
-site_url: https://r-inyuru.github.io/ModelingFabricationTechnique
-repo_url: https://github.com/R-INYURU/
+site_url: https://umwirabura.github.io/Modeling-Fabrication/
+repo_url: https://github.com/umwirabura/Modeling-Fabrication
 repo_name: UR-ACEIoT Documentation site
 
 extra:
@@ -13,11 +13,11 @@ extra:
     # Change to your own social media or remove line to hide. 
     # For more social icons ideas at https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer/#social-links
     - icon: fontawesome/brands/instagram
-      link: https://instagram.com/fablab_rwanda
+      link: https://instagram.com/_kirenga_
     - icon: fontawesome/brands/facebook
-      link: https://facebook.com/KigaliFabLab
+      link: https://facebook.com/_kirenga_
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/fablabrw
+      link: https://twitter.com/_kirenga_
 
 theme:
   # The name of the theme, needs to match your requirements.txt file
@@ -49,7 +49,7 @@ theme:
 plugins:
   - search
   - glightbox:
-  - git-revision-date:
+  - git-revision-date-localized:
       enabled_if_env: CI
 
 # See more extensions at https://squidfunk.github.io/mkdocs-material/reference/
