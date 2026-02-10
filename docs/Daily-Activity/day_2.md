@@ -52,11 +52,11 @@ Below are images that show the progression of my modeling workflow.
 
 ### Modeling Workspace
 
-![Modeling Workspace](images/day_2/workspace.png){ width=700 }
+![Modeling Workspace](../images/day_2/workspace.png){ width=700 }
 
 ### Parametric Result After Rule Update
 
-![Parametric Result](images/day_2/result.png){ width=700 }
+![Parametric Result](../images/day_2/result.png){ width=700 }
 
 ---
 

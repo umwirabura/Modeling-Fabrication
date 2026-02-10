@@ -18,7 +18,7 @@ The printing process itself took several hours, depending on the size and comple
 
 After the print completed, the part was removed from the build plate. Post-processing involved removing any support material and cleaning up the surface. Depending on the print quality and intended use, additional finishing steps such as sanding, filing, or chemical smoothing could be applied, though these were not strictly necessary for a functional prototype. The dimensional accuracy was checked to ensure the lid would fit properly with its corresponding container base.
 
-![Final 3D printed container lid](../images/day_6/finalprint.png)
+![Final 3D printed container lid](../images/day_6/finalprint.jpeg)
 
 This activity demonstrated several key concepts in additive manufacturing. Understanding how slicer settings affect both print quality and print time is essential for efficient 3D printing. The importance of proper machine configuration and error troubleshooting was reinforced through the printer selection issue. Additionally, working with a functional design that has specific dimensional requirements highlighted how 3D printing tolerances and material shrinkage must be considered during the digital preparation phase.
 

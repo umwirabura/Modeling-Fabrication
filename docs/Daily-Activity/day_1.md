@@ -97,7 +97,7 @@ The task involved uploading the MkDocs project to GitHub and deploying it as a p
 This process helped me understand how documentation can be shared openly and maintained using version control tools.
 
 Below is my documentation`s home page.
-![](./images/day_1/home.jpg){ width=600 height= 800 }
+![Home](../images/day_1/home.jpg){ width=600 height= 800 }
 
 ---
 
