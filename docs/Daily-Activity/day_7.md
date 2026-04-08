@@ -1,29 +1,47 @@
-## Day 7 – Digital Fabrication III: CNC Router Milling & Cutting
+## Day 7 – Digital Fabrication III: PCB Milling
 
-### PCB Milling Process
+### Fabricating the ATtiny45 Board on the Nomad 3
 
-Day 7 focused on the physical fabrication of the PCB designed in Day 3 using a CNC milling machine. This activity bridged the gap between digital design and physical production, demonstrating how computer-aided manufacturing (CAM) translates Gerber files into precise machine movements that create functional circuit boards. The process involved converting the ATtiny45 microcontroller board design into a milled PCB ready for component assembly.
+Day 7 focused on the physical fabrication of the PCB designed during Day 3, using the Nomad 3 desktop CNC milling machine. This activity represented the transition from digital design to physical production, completing the workflow that began in KiCad by producing a tangible copper circuit board. The process required working through two software tools — Carbide Copper for toolpath generation and Carbide Motion for machine control — and provided hands-on experience with the challenges that arise when taking a digital design into a physical manufacturing environment.
 
-PCB milling is a subtractive fabrication process that removes copper from a copper-clad board to define circuit traces, pads, and other features. Unlike chemical etching methods that use corrosive solutions, mechanical milling uses precision cutting tools to carve away unwanted copper, leaving behind the desired circuit pattern. This approach offers several advantages for prototyping, including faster turnaround times, the ability to produce boards in-house without external manufacturers, and immediate iteration capabilities when design changes are needed.
+---
 
-The milling process requires careful attention to several key parameters. Trace width determines both the current-carrying capacity of the circuit and the machinability of the design. Wider traces are more robust and easier to mill reliably, while very narrow traces may be fragile or difficult to produce consistently. Clearance between traces is critical for preventing short circuits and ensuring proper electrical isolation. Pads must be sized appropriately to support reliable soldering and provide mechanical stability for component leads. For single-sided boards, vias are typically avoided or replaced with wire jumpers during assembly, as through-hole plating is not available in basic milling processes.
+### Preparing the G-Code with Carbide Copper
 
-The workflow began by preparing the milling machine and loading the necessary software. Carbide Motion was used as the control software for interfacing with the CNC milling machine. The copper-clad board was secured to the machine bed using double-sided tape, ensuring it would remain firmly in place throughout the milling process. Proper board fixation is essential, as any movement during milling would result in misaligned traces or incomplete cuts.
+The first step was getting the Gerber files from KiCad into a format the Nomad 3 could actually use. Carbide Copper, a web-based tool at copper.carbide3d.com, handles exactly that — it takes the board design files and converts them into the movement instructions the machine follows during milling.
 
-The Gerber files generated from KiCad during Day 3 were imported into Carbide Motion. These files contain all the geometric information needed to fabricate the board, including trace patterns, pad locations, drill holes, and board outline. The software processes these files and generates toolpaths that guide the milling machine's movements. Configuration of tool position and cutting depth was performed carefully, as incorrect settings could damage the board, break the milling bit, or produce inadequate results.
+The setup process involved entering the board dimensions to match the physical copper-clad sheet, setting the job to bottom side only since the ATtiny45 design is single-sided, and uploading three files from the KiCad project in a specific order. The first was `Microcontroller PCB Design-F_Cu.gbr`, the front copper layer file, which contains all the trace and pad geometry — essentially the circuit itself. The second was `Microcontroller PCB Design-PTH.drl`, the drill file for plated through-holes, which tells the software where component lead holes need to be made. The third was `Microcontroller PCB Design-Edge_Cuts.gbr`, the board outline file, which defines the physical boundary of the PCB so the machine knows where the board ends. Each file handles a different aspect of the board, and Carbide Copper uses all three together to build a complete picture of what needs to be milled. After selecting the appropriate engraving tool and confirming the settings, it generated the G-code file ready to be loaded into the machine.
 
-One challenge encountered during the setup phase was achieving proper tool height calibration. The milling bit needs to be positioned precisely relative to the board surface to ensure it cuts through the copper layer without digging too deeply into the substrate material. Finding the correct zero point required careful adjustment and testing. Additionally, ensuring the board was completely flat and level on the bed was critical, as any warping or tilt would result in inconsistent cutting depth across the board.
+![Carbide Copper with PCB board routing configured](../images/day_7/carbide_copper.png)
 
-The milling process proceeded in stages. First, the machine engraved the circuit traces by removing copper from the areas between conductive paths. The cutting tool followed the programmed toolpaths, methodically carving away copper to isolate each trace, pad, and component footprint. This trace isolation step is the most critical phase, as it defines the actual circuitry. The machine worked systematically across the board, and the progress could be monitored to ensure proper execution.
+---
 
-After trace milling was complete, the tool was changed to accommodate the board profiling operation. The profiling tool cuts the outer perimeter of the PCB, separating it from the larger copper-clad sheet. Tool position and depth were re-adjusted for this new operation, as cutting through the entire board thickness requires different settings than surface engraving. The machine then cut along the board outline, completing the physical fabrication of the PCB.
+### Machine Setup and Job Initialization
 
-The final milled board was removed from the machine bed and inspected for quality. The traces were clean and well-defined, with proper clearance between conductive paths. Holes for component leads were accurately positioned, and the board outline was cut cleanly. Minor burrs or rough edges from the milling process could be cleaned up with fine sandpaper or a deburring tool. The board was then ready for the next stage of assembly, which would involve soldering the ATtiny45 microcontroller, LED, resistor, push button, ISP header, and other components.
+With the G-code ready, the copper-clad board was secured to the Nomad 3 bed using double-sided tape to prevent any movement during milling. Proper fixation is critical in PCB milling, as even minor shifts in the board during the process result in misaligned traces that render the board unusable. The G-code file was then loaded into Carbide Motion, the machine control software, and the program zero was set to define the reference point for all subsequent cuts.
 
-![Final milled PCB board](../images/day_7/finalPCB.jpeg)
+![Copper-clad board secured on the Nomad 3 machine bed](../images/day_7/setup.jpg)
 
-This activity demonstrated the complete transition from digital PCB design to physical fabrication. Understanding how design decisions in KiCad directly affect the milling process reinforced the importance of design-for-manufacturing principles. Working with the CNC milling machine provided hands-on experience with CAM workflows, toolpath generation, and the practical considerations of subtractive manufacturing. The challenges encountered, particularly around tool calibration and board fixation, highlighted the importance of careful setup and attention to detail in achieving reliable fabrication results. The successful production of a functional PCB from the Day 3 design validated the entire design-to-fabrication workflow and prepared the board for final assembly and testing.
+Before the job could start, Carbide Motion flagged a bounds check warning indicating that the program zero had been positioned 41.3 mm too far toward the back of the machine along the Y axis. This meant the machine would attempt to travel beyond its physical working limits during the job. The warning required stopping, resetting the program zero to a corrected position closer to the front of the machine bed, and restarting the job initialization process.
+
+![Carbide Motion bounds check warning before the milling job](../images/day_7/carbide_motion.png)
+
+This step highlighted how important accurate zero-setting is in CNC workflows. A small error in the reference point propagates through every toolpath the machine executes, affecting not just position accuracy but also the mechanical load placed on the cutting tool.
+
+---
+
+### Milling Process and Bit Failure
+
+With the corrected program zero confirmed, the Nomad 3 began the trace isolation passes, removing copper from the areas between circuit traces to define the conductive paths of the ATtiny45 board. The machine followed the programmed toolpaths, and the milling process was progressing as expected when the engraving bit broke mid-operation.
+
+![Partially milled PCB board and broken engraving bit](../images/day_7/partial_pcb.jpeg)
+
+PCB engraving bits are extremely fine-tipped tools that are highly sensitive to cutting depth. A likely contributing factor to the failure was the earlier zero-setting issue: even after correction, if the Z-axis depth was slightly off, the bit would have been cutting more aggressively into the substrate material beneath the copper layer rather than skimming the surface. This type of overload causes the tool tip to snap. The break halted the job before the full board outline could be completed, leaving a partially milled PCB.
+
+The partial result nonetheless showed that the trace geometry from the Day 3 KiCad design had translated correctly into the milling toolpaths. The circuit traces, component pads, and the ATtiny45 footprint are clearly visible on the copper surface where the machine completed its passes before the failure occurred.
+
+---
 
 ### Reflection
 
-The PCB milling process revealed how digital design files are translated into physical manufacturing operations through precise machine control. The importance of proper setup, including tool height calibration and board fixation, became evident as critical factors in achieving successful results. Understanding the relationship between design parameters such as trace width and clearance, and their impact on machinability, reinforced the need to design with fabrication constraints in mind from the beginning. This hands-on experience with CNC milling complemented the theoretical knowledge from earlier days and provided practical insight into the capabilities and limitations of in-house PCB fabrication.
+This session made clear that the transition from digital design to physical fabrication introduces a layer of complexity that cannot be fully anticipated from the design environment alone. The bounds check error and the subsequent bit failure were connected: an imprecise zero-setting creates downstream conditions that affect tool loading and longevity. The experience reinforced the importance of systematic setup verification before running any CNC job — particularly the program zero, depth of cut, and job preview — as these settings directly determine whether the physical outcome matches the digital intent. Repeating this activity with corrected setup parameters would likely produce a complete, functional board from the Day 3 design.
